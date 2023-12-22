@@ -18,7 +18,7 @@ const ClientType = new GraphQLObjectType({
     phone: { type: GraphQLString },
   }),
 })
-
+//won't need any of this
 // const RootQuery = new GraphQLObjectType({
 // const schema = new GraphQLObjectType({
 //   name: 'RootQueryType',
