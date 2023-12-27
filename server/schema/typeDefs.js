@@ -11,5 +11,8 @@ const typeDefs = gql`
     email: String!
     phone: String!
   }
+
+  type Mutation {
+    create(name: String!, email: String!, phone: String!): Client
 `
 export default typeDefs
