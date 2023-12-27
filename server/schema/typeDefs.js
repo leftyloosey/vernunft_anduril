@@ -2,11 +2,12 @@ import gql from 'graphql-tag'
 
 const typeDefs = gql`
   type Query {
-    clientList: [Client!]!
+    clientList: [Client]
     greetings: String
   }
 
   type Client {
+    id: ID!
     name: String!
     email: String!
     phone: String!
@@ -14,5 +15,6 @@ const typeDefs = gql`
 
   type Mutation {
     create(name: String!, email: String!, phone: String!): Client
+  }
 `
 export default typeDefs

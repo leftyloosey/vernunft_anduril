@@ -13,7 +13,7 @@ connectDB()
 const server = new ApolloServer({ typeDefs, resolvers })
 
 startStandaloneServer(server, {
-  listen: { port: process.env.PORT || 5001 },
+  listen: { port },
 }).then(({ url }) => {
   console.log(`Server ready at ${url}`)
 })
