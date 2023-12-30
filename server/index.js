@@ -6,7 +6,7 @@ import connectDB from './config/db.js'
 import typeDefs from './schema/typeDefs.js'
 import resolvers from './resolvers/resolvers.js'
 
-const port = process.env.PORT || 5001
+const port = process.env.PORT || 5002
 
 connectDB()
 
