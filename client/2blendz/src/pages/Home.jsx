@@ -7,6 +7,9 @@ const Home = () => {
       <p>
         <Link to='/signuplist'>SignUp</Link>
       </p>
+      <p>
+        <Link to='/practice'>Practice</Link>
+      </p>
     </div>
   )
 }
