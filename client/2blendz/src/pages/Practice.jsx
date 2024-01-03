@@ -1,7 +1,5 @@
-import React from 'react'
-
 const Practice = () => {
-  return <div>Practice</div>
+  return <div className=''>Practice</div>
 }
 
 export default Practice
