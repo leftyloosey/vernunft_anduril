@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/vernunft_anduril/static/css/main.0413270c.css",
+    "main.js": "/vernunft_anduril/static/js/main.dc301c61.js",
+    "static/media/img6.jpeg": "/vernunft_anduril/static/media/img6.791df180aa8f91246fa9.jpeg",
+    "static/media/img3.jpeg": "/vernunft_anduril/static/media/img3.eb39ef17e54961e284bc.jpeg",
+    "static/media/img2.jpeg": "/vernunft_anduril/static/media/img2.4fd5eb8d46e1a829c770.jpeg",
+    "static/media/img1.jpeg": "/vernunft_anduril/static/media/img1.3c8d426ed5562327d280.jpeg",
+    "static/media/jesus.jpg": "/vernunft_anduril/static/media/jesus.803ceffa1c0c3a245de6.jpg",
+    "static/media/naroBlends.jpeg": "/vernunft_anduril/static/media/naroBlends.47f5a20624be6d519a63.jpeg",
+    "index.html": "/vernunft_anduril/index.html",
+    "main.0413270c.css.map": "/vernunft_anduril/static/css/main.0413270c.css.map",
+    "main.dc301c61.js.map": "/vernunft_anduril/static/js/main.dc301c61.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0413270c.css",
+    "static/js/main.dc301c61.js"
+  ]
+}
