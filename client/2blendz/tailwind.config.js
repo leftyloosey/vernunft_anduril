@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        ubuntu: ['Ubuntu', 'sans-serif'],
+        neuton: ['Neuton', 'sans-serif'],
+        cinzel: ['Cinzel', 'sans-serif'],
       },
     },
     fontFamily: {
