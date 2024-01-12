@@ -11,26 +11,36 @@ import { useQuery, gql } from '@apollo/client'
 //     }
 //   }
 // `
+// const login = gql`
+//   query HelloThere {
+//     fuck(name: "bobby") {
+//       email
+//     }
+//   }
+// `
+
 const login = gql`
-  query HelloThere {
-    fuck(name: "bobby") {
+  query Fuck($name: String!) {
+    fuck(name: $name) {
       email
     }
   }
 `
 
 const SignUpList = () => {
-  const { data, refetch } = useQuery(login, {
-    enabled: false,
-  })
-
   const [name, setName] = useState('')
   const [other, setOther] = useState('fancy pants')
-
+  const { data, refetch } = useQuery(login, {
+    enabled: false,
+    variables: { name },
+  })
+  const array = []
   // const onSubmit = (e) => {}
   const onSubmit = (e) => {
     refetch()
     e.preventDefault()
+    array.push(name)
+    console.log(array)
     console.log(data)
   }
 
