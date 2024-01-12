@@ -6,7 +6,14 @@ const resolvers = {
     clientList: async () => {
       return await Client.find({})
     },
-    // students: async () => await Student.find({}),
+    // login: async (parent, args, context, info) => {
+    //   const { id } = args
+    //   return Client.findById(id)
+    // },
+    fuck: async (parent, args, context, info) => {
+      const { name } = args
+      return await Client.findOne({ name })
+    },
   },
   Mutation: {
     create: async (parent, args) => {
