@@ -2,32 +2,35 @@ import { useState } from 'react'
 import { useMutation } from '@apollo/client'
 import { CHANGE_LIST_NAME } from '../queries'
 
-const AColumn = ({ id, data }) => {
-  const { LIST_Name } = id
-  const [name1, setName1] = useState('')
+const AColumn = ({ id, data, listName, refetch }) => {
+  const [name, setName] = useState('')
 
-  const mutate1Vars = { id: LIST_Name, listName: name1 }
+  const mutateVars = { id, listName: name }
 
-  const [mutateList1Name, { mutateData1, loading1, error1 }] = useMutation(
-    CHANGE_LIST_NAME,
-    { variables: mutate1Vars }
-  )
+  const [mutateListName, { loading, error }] = useMutation(CHANGE_LIST_NAME, {
+    variables: mutateVars,
+    onCompleted: () => refetch(),
+  })
 
-  const onSubmit1 = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault()
-    mutateList1Name()
+    mutateListName()
   }
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Something went wrong</p>
+
   return (
     <div className='flex flex-col'>
-      <form onSubmit={onSubmit1}>
+      <p className='text-white'>{listName}</p>
+      <form onSubmit={onSubmit}>
         <div className=''>
-          <label className='form-label text-white'>Name</label>
+          <label className='form-label text-white'>New name:</label>
           <input
             type='text'
             className='form-control text-black'
             id='name'
-            value={name1}
-            onChange={(e) => setName1(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
 
@@ -37,8 +40,10 @@ const AColumn = ({ id, data }) => {
       </form>
       {data && (
         <div className='text-white'>
-          {data.map((e) => (
-            <li className='text-white'>{e}</li>
+          {data.map((e, index) => (
+            <li key={index} className='text-white'>
+              {e}
+            </li>
           ))}
         </div>
       )}

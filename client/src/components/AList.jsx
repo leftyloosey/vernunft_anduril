@@ -1,21 +1,24 @@
 import { useState } from 'react'
 import { useMutation } from '@apollo/client'
 
-const AList = ({ props }) => {
-  const { data, LIST1_ID, PUSH_LIST, refetch } = props
+const AList = ({ id, props }) => {
+  const { data, PUSH_LIST, refetch } = props
   const [name, setName] = useState('')
 
-  const [mutateFunction, { mutateData, loading, error }] = useMutation(
-    PUSH_LIST,
-    { variables: { names: name, id: LIST1_ID } }
-  )
+  const [mutateFunction, { loading, error }] = useMutation(PUSH_LIST, {
+    variables: { names: name, id: id },
+  })
   const onSubmit = (e) => {
     e.preventDefault()
     mutateFunction()
     refetch()
   }
+  if (loading) return <p>Loading</p>
+  if (error) return <p>Something Went Wrong</p>
   return (
     <div className=''>
+      <p className='text-white'>{data?.getNames?.listName}</p>
+
       <form onSubmit={onSubmit}>
         <div className=''>
           <label className='form-label text-white'>Name</label>
@@ -35,8 +38,10 @@ const AList = ({ props }) => {
       {/* <p className='text-white'>{other}</p> */}
       {data?.getNames?.names && (
         <div className='text-white'>
-          {data?.getNames?.names?.map((e) => (
-            <li className='text-white'>{e}</li>
+          {data?.getNames?.names?.map((e, index) => (
+            <li key={index} className='text-white'>
+              {e}
+            </li>
           ))}
         </div>
       )}
