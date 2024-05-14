@@ -54,8 +54,11 @@ app.use(
 // app.use(express.static(path.join(__dirname, 'client/build')))
 // app.use(express.static('client/public'))
 
-app.get('*', (req, res) => res.send('hello'))
-console.log(res)
+app.get('*', (req, res) => {
+  console.log(res)
+
+  res.send('hello')
+})
 // res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
 
 app.get('/', (req, res) => res.send('hello'))
