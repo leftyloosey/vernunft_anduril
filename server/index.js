@@ -25,7 +25,6 @@ connectDB()
 // })
 
 // await server.start()
-
 // app.use(
 //   '/graphql',
 //   cors({
