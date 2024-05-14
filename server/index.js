@@ -8,6 +8,7 @@ import typeDefs from './schema/typeDefs.js'
 import resolvers from './resolvers/resolvers.js'
 import { expressMiddleware } from '@apollo/server/express4'
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer'
+import path from 'path'
 
 import cors from 'cors'
 import http from 'http'
