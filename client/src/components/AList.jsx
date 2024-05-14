@@ -8,43 +8,63 @@ const AList = ({ id, props }) => {
   const [mutateFunction, { loading, error }] = useMutation(PUSH_LIST, {
     variables: { names: name, id: id },
   })
+  const confirmFunction = () => {
+    if (!data?.getNames?.names.includes(name) && name.length > 0) {
+      let bool = window.confirm('Confirm ' + name + '?')
+      if (bool) {
+        mutateFunction()
+        setName('')
+        refetch()
+      } else {
+        setName('')
+      }
+    } else {
+      window.alert('Please enter a new, valid name')
+    }
+  }
+
   const onSubmit = (e) => {
     e.preventDefault()
-    mutateFunction()
-    refetch()
+    confirmFunction()
   }
   if (loading) return <p>Loading</p>
   if (error) return <p>Something Went Wrong</p>
   return (
     <div className=''>
-      <p className='text-white'>{data?.getNames?.listName}</p>
+      <p className='text-white text-7xl'>{data?.getNames?.listName}</p>
 
       <form onSubmit={onSubmit}>
-        <div className=''>
-          <label className='form-label text-white'>Name</label>
+        <div className='flex flex-row mt-4'>
+          <label className='form-label text-white mr-2 text-3xl'>
+            <button
+              type='submit'
+              data-bs-dismiss='modal'
+              className='text-white flex justify-center rounded-full bg-slate-600 w-36 h-16 pt-3 font-bold hover:bg-slate-400 hover:text-black'
+            >
+              Sign up
+            </button>
+          </label>
           <input
             type='text'
-            className='form-control text-black'
+            className='form-control text-black text-5xl font-semibold'
             id='name'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-
-        <button type='submit' data-bs-dismiss='modal' className='bg-slate-600'>
-          Submit
-        </button>
       </form>
-      {/* <p className='text-white'>{other}</p> */}
-      {data?.getNames?.names && (
-        <div className='text-white'>
-          {data?.getNames?.names?.map((e, index) => (
-            <li key={index} className='text-white'>
-              {e}
-            </li>
-          ))}
-        </div>
-      )}
+      <div className=''>
+        {/* <div className='ml-28 pl-2'> */}
+        {data?.getNames?.names && (
+          <div className='text-lg font-semibold ml-8 mt-7 bg-white w-60 h-96'>
+            {data?.getNames?.names?.map((e, index) => (
+              <ul key={index} className=''>
+                {e}
+              </ul>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 }

@@ -21,7 +21,8 @@
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
     "http": "^0.0.1-security",
-    "mongoose": "^8.0.3"
+    "mongoose": "^8.0.3",
+    "react-qrcode-logo": "^2.10.0"
   },
   "devDependencies": {
     "dotenv": "^16.3.1",

@@ -24,7 +24,7 @@ const AColumn = ({ id, data, listName, refetch }) => {
       <p className='text-white'>{listName}</p>
       <form onSubmit={onSubmit}>
         <div className=''>
-          <label className='form-label text-white'>New name:</label>
+          <label className='form-label'></label>
           <input
             type='text'
             className='form-control text-black'
@@ -34,16 +34,34 @@ const AColumn = ({ id, data, listName, refetch }) => {
           />
         </div>
 
-        <button type='submit' data-bs-dismiss='modal' className='bg-slate-600'>
-          Confirm
+        <button
+          type='submit'
+          data-bs-dismiss='modal'
+          className='bg-slate-600 text-white mb-4'
+        >
+          Rename
         </button>
       </form>
       {data && (
         <div className='text-white'>
+          <p className='mb-2'>
+            {data.length < 2 ? (
+              <span className='text-green-300'>
+                [{data.length}] <span className='text-white'>person </span>
+              </span>
+            ) : (
+              <span className='text-green-300'>
+                [{data.length}] <span className='text-white'>people </span>
+              </span>
+            )}
+            signed up:
+          </p>
           {data.map((e, index) => (
-            <li key={index} className='text-white'>
-              {e}
-            </li>
+            <ol>
+              <li key={index} className='text-white'>
+                {e}
+              </li>
+            </ol>
           ))}
         </div>
       )}
