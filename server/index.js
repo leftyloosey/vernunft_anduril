@@ -16,35 +16,52 @@ const port = process.env.PORT || 5002
 
 connectDB()
 
-// const app = express()
-// const httpServer = http.createServer(app)
-// const server = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
-// })
+const app = express()
+// Our httpServer handles incoming requests to our Express app.
+// Below, we tell Apollo Server to "drain" this httpServer,
+// enabling our servers to shut down gracefully.
+const httpServer = http.createServer(app)
 
-// await server.start()
-// app.use(
-//   '/graphql',
-//   cors({
-//     origin: [
-//       'http://localhost:3000',
-//       'https://studio.apollographql.com',
-//       'http://localhost:5002',
-//     ],
-//   }),
-//   express.json(),
-//   expressMiddleware(server)
-// )
-
-// await new Promise((resolve) => httpServer.listen({ port }, resolve))
-// console.log(`🚀 Server ready at ${port}`)
-
-const server = new ApolloServer({ typeDefs, resolvers })
-
-startStandaloneServer(server, {
-  listen: { port },
-}).then(({ url }) => {
-  console.log(`Server ready at ${url}`)
+// Same ApolloServer initialization as before, plus the drain plugin
+// for our httpServer.
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 })
+// Ensure we wait for our server to start
+await server.start()
+
+// Set up our Express middleware to handle CORS, body parsing,
+// and our expressMiddleware function.
+app.use(
+  '/',
+  cors(),
+  // 50mb is the limit that `startStandaloneServer` uses, but you may configure this to suit your needs
+  express.json({ limit: '50mb' }),
+  // expressMiddleware accepts the same arguments:
+  // an Apollo Server instance and optional configuration options
+  expressMiddleware(server, {
+    context: async ({ req }) => ({ token: req.headers.token }),
+  })
+)
+
+app.use(express.static('public'))
+// app.use(express.static('client-app/build'));
+
+//
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
+
+// Modified server startup
+await new Promise((resolve) => httpServer.listen({ port: 5002 }, resolve))
+console.log(`🚀 Server ready at http://localhost:5002/`)
+
+// const server = new ApolloServer({ typeDefs, resolvers })
+
+// startStandaloneServer(server, {
+//   listen: { port },
+// }).then(({ url }) => {
+//   console.log(`Server ready at ${url}`)
+// })
