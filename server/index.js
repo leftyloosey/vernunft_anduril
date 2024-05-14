@@ -19,41 +19,41 @@ const port = process.env.PORT || 5002
 
 connectDB()
 
-// const __filename = fileURLToPath(import.meta.url)
-// const __dirname = path.dirname(__filename)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-// const app = express()
+const app = express()
 
-// const httpServer = http.createServer(app)
+const httpServer = http.createServer(app)
 
-// const server = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
-// })
-// await server.start()
-
-// app.use(express.static(path.join(__dirname, '../client/build')))
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
-// })
-
-// app.use(
-//   '/',
-//   cors(),
-//   express.json({ limit: '50mb' }),
-//   expressMiddleware(server, {
-//     context: async ({ req }) => ({ token: req.headers.token }),
-//   })
-// )
-
-// await new Promise((resolve) => httpServer.listen({ port: port }, resolve))
-// console.log(`🚀 Server ready at http://localhost:${port}`)
-
-const server = new ApolloServer({ typeDefs, resolvers })
-
-startStandaloneServer(server, {
-  listen: { port },
-}).then(({ url }) => {
-  console.log(`Server ready at ${url}`)
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 })
+await server.start()
+
+app.use(express.static(path.join(__dirname, '../client/build')))
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
+})
+
+app.use(
+  '/',
+  cors(),
+  express.json({ limit: '50mb' }),
+  expressMiddleware(server, {
+    context: async ({ req }) => ({ token: req.headers.token }),
+  })
+)
+
+await new Promise((resolve) => httpServer.listen({ port: port }, resolve))
+console.log(`🚀 Server ready at http://localhost:${port}`)
+
+// const server = new ApolloServer({ typeDefs, resolvers })
+
+// startStandaloneServer(server, {
+//   listen: { port },
+// }).then(({ url }) => {
+//   console.log(`Server ready at ${url}`)
+// })
