@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bc51db5d.css",
+    "main.js": "/static/js/main.aa9065bb.js",
+    "static/media/img6.jpeg": "/static/media/img6.791df180aa8f91246fa9.jpeg",
+    "static/media/img8.jpeg": "/static/media/img8.6e9744e688aa1299ab75.jpeg",
+    "static/media/img7.jpeg": "/static/media/img7.6a6d72c60a0b486dd36c.jpeg",
+    "static/media/img3.jpeg": "/static/media/img3.eb39ef17e54961e284bc.jpeg",
+    "static/media/img4.jpeg": "/static/media/img4.f8b6ddac2826eb87cca4.jpeg",
+    "static/media/img2.jpeg": "/static/media/img2.4fd5eb8d46e1a829c770.jpeg",
+    "static/media/img1.jpeg": "/static/media/img1.3c8d426ed5562327d280.jpeg",
+    "static/media/jesus.jpg": "/static/media/jesus.803ceffa1c0c3a245de6.jpg",
+    "static/media/88blendz_copy.jpeg": "/static/media/88blendz_copy.d13891b7f46d223d0d30.jpeg",
+    "static/media/naroBlends.jpeg": "/static/media/naroBlends.47f5a20624be6d519a63.jpeg",
+    "index.html": "/index.html",
+    "main.bc51db5d.css.map": "/static/css/main.bc51db5d.css.map",
+    "main.aa9065bb.js.map": "/static/js/main.aa9065bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc51db5d.css",
+    "static/js/main.aa9065bb.js"
+  ]
+}
