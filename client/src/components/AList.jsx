@@ -31,7 +31,9 @@ const AList = ({ id, props }) => {
   if (error) return <p>Something Went Wrong</p>
   return (
     <div className=''>
-      <p className='text-white text-7xl'>{data?.getNames?.listName}</p>
+      <p className='text-white text-5xl md:text-7xl'>
+        {data?.getNames?.listName}
+      </p>
 
       <form onSubmit={onSubmit}>
         <div className='flex flex-row mt-4'>
@@ -46,7 +48,7 @@ const AList = ({ id, props }) => {
           </label>
           <input
             type='text'
-            className='form-control text-black text-5xl font-semibold'
+            className='form-control text-black text-5xl font-semibold w-64 md:w-80'
             id='name'
             value={name}
             onChange={(e) => setName(e.target.value)}

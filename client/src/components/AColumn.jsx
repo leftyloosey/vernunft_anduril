@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useMutation } from '@apollo/client'
-import { CHANGE_LIST_NAME } from '../queries'
+import { CHANGE_LIST_NAME, CLEAR_LIST } from '../queries'
 
 const AColumn = ({ id, data, listName, refetch }) => {
   const [name, setName] = useState('')
@@ -11,9 +11,21 @@ const AColumn = ({ id, data, listName, refetch }) => {
     variables: mutateVars,
     onCompleted: () => refetch(),
   })
-
+  // eslint-disable-next-line
+  const [clearListName, { loading2, error2 }] = useMutation(CLEAR_LIST, {
+    variables: { id },
+    onCompleted: () => refetch(),
+  })
+  const onClearList = (e) => {
+    e.preventDefault()
+    let bool = window.confirm('Are you sure you want to clear this list?')
+    if (bool) {
+      clearListName()
+    }
+  }
   const onSubmit = (e) => {
     e.preventDefault()
+
     mutateListName()
   }
   if (loading) return <p>Loading...</p>
@@ -41,11 +53,20 @@ const AColumn = ({ id, data, listName, refetch }) => {
         >
           Rename
         </button>
+
+        <button
+          type='button'
+          data-bs-dismiss='modal'
+          className='bg-slate-600 text-white mb-4 ml-2'
+          onClick={onClearList}
+        >
+          Clear List
+        </button>
       </form>
       {data && (
         <div className='text-white'>
           <p className='mb-2'>
-            {data.length < 2 ? (
+            {data.length === 1 ? (
               <span className='text-green-300'>
                 [{data.length}] <span className='text-white'>person </span>
               </span>

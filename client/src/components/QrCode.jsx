@@ -7,8 +7,8 @@ const QrCode = ({ listAddress }) => {
       <QRCode
         value={listAddress}
         logoImage={image}
-        logoHeight={75}
-        logoWidth={75}
+        logoHeight={45}
+        logoWidth={45}
       />
       ,
     </>

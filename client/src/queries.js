@@ -34,6 +34,16 @@ export const CHANGE_LIST_NAME = gql`
     }
   }
 `
+export const CLEAR_LIST = gql`
+  mutation Mutation($id: ID) {
+    clearListNames(id: $id) {
+      names
+      listName
+      id
+    }
+  }
+`
+
 export const LIST_1_ID = '6640ee9bbb14a40888869c1c'
 export const LIST_2_ID = '6640eea2bb14a40888869c1e'
 export const LIST_3_ID = '6640eea7bb14a40888869c20'

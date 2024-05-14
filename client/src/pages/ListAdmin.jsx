@@ -9,9 +9,12 @@ const ListAdmin = () => {
   if (loading) return <p>Loading</p>
   if (error) return <p>Something Went Wrong</p>
   return (
-    <div className='flex flex-row justify-around gap-24'>
+    <div className='flex flex-col ml-14 md:flex-row md:justify-around gap-24'>
       <div className='flex flex-col'>
-        <QrCode listAddress={'http://localhost:3000/signuplist1'} />
+        <QrCode
+          listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+        />
+        {/* <QrCode listAddress={'http://localhost:3000/signuplist1'} /> */}
         <AColumn
           id={LIST_1_ID}
           data={data?.listList[0]?.names}
@@ -21,7 +24,10 @@ const ListAdmin = () => {
       </div>
 
       <div className='flex flex-col'>
-        <QrCode listAddress={'http://localhost:3000/signuplist2'} />
+        <QrCode
+          listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+        />
+        {/* <QrCode listAddress={'http://localhost:3000/signuplist2'} /> */}
         <AColumn
           id={LIST_2_ID}
           data={data?.listList[1]?.names}
@@ -31,7 +37,10 @@ const ListAdmin = () => {
       </div>
 
       <div className='flex flex-col'>
-        <QrCode listAddress={'http://localhost:3000/signuplist3'} />
+        {/* <QrCode listAddress={'http://localhost:3000/signuplist3'} /> */}
+        <QrCode
+          listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+        />
         <AColumn
           id={LIST_3_ID}
           data={data?.listList[2]?.names}
