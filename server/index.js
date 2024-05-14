@@ -55,8 +55,8 @@ app.use(
 // })
 
 // Modified server startup
-await new Promise((resolve) => httpServer.listen({ port: 5002 }, resolve))
-console.log(`🚀 Server ready at http://localhost:5002/`)
+await new Promise((resolve) => httpServer.listen({ port: port }, resolve))
+console.log(`🚀 Server ready at http://localhost:${port}`)
 
 // const server = new ApolloServer({ typeDefs, resolvers })
 
