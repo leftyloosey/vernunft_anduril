@@ -13,6 +13,7 @@ import { fileURLToPath } from 'url'
 
 import cors from 'cors'
 import http from 'http'
+import { log } from 'console'
 
 const port = process.env.PORT || 5002
 
@@ -39,6 +40,11 @@ await server.start()
 
 // Set up our Express middleware to handle CORS, body parsing,
 // and our expressMiddleware function.
+app.use(express.static(path.join(__dirname, '/client/public')))
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '/client/public', 'index.html'))
+})
+
 app.use(
   '/',
   cors(),
@@ -52,7 +58,7 @@ app.use(
 )
 
 // app.use(express.static(path.join(__dirname, 'client/build')))
-app.use(express.static('/client/public'))
+// app.use(express.static('/client/public'))
 
 // app.get('*', (req, res) => {
 //   console.log(res)
@@ -64,14 +70,12 @@ app.use(express.static('/client/public'))
 app.get('/hello', (req, res) => {
   res.send('hello')
   console.log(res)
+  console.log('hello inside')
 })
+console.log('hello outside')
 // res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
 
 // app.use(express.static('public'))
-
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '/client/public', 'index.html'))
-})
 
 // Modified server startup
 await new Promise((resolve) => httpServer.listen({ port: port }, resolve))
