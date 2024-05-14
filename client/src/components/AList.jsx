@@ -36,7 +36,7 @@ const AList = ({ id, props }) => {
       </p>
 
       <form onSubmit={onSubmit}>
-        <div className='flex flex-row mt-4'>
+        <div className='flex flex-row mt-6'>
           <label className='form-label text-white mr-2 text-3xl'>
             <button
               type='submit'
@@ -48,7 +48,7 @@ const AList = ({ id, props }) => {
           </label>
           <input
             type='text'
-            className='form-control text-black text-5xl font-semibold w-64 md:w-80'
+            className='form-control text-black text-5xl ml-2 font-semibold w-64 md:w-80'
             id='name'
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -58,7 +58,7 @@ const AList = ({ id, props }) => {
       <div className=''>
         {/* <div className='ml-28 pl-2'> */}
         {data?.getNames?.names && (
-          <div className='text-lg font-semibold ml-8 mt-7 bg-white w-60 h-96'>
+          <div className='text-lg font-semibold ml-40 mt-7 bg-white w-80 h-96'>
             {data?.getNames?.names?.map((e, index) => (
               <ul key={index} className=''>
                 {e}
