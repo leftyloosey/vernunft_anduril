@@ -9,6 +9,7 @@ import resolvers from './resolvers/resolvers.js'
 import { expressMiddleware } from '@apollo/server/express4'
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
 import cors from 'cors'
 import http from 'http'
@@ -16,6 +17,9 @@ import http from 'http'
 const port = process.env.PORT || 5002
 
 connectDB()
+
+const __filename = fileURLToPath(import.meta.url) // get the resolved path to the file
+const __dirname = path.dirname(__filename) // get the name of the directory
 
 const app = express()
 // Our httpServer handles incoming requests to our Express app.
@@ -48,13 +52,13 @@ app.use(
 )
 
 app.use(express.static(path.join(__dirname, 'client/build')))
+// app.use(express.static('client/public'))
 
 app.get('*', (req, res) =>
   res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
 )
 
 // app.use(express.static('public'))
-app.use(express.static('client/public'))
 
 //
 // app.get('*', (req, res) => {
