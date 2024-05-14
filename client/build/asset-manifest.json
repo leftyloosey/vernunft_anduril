@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ab5791db.css",
-    "main.js": "/static/js/main.f2c7d2cc.js",
+    "main.js": "/static/js/main.9aba1c3c.js",
     "static/media/img6.jpeg": "/static/media/img6.791df180aa8f91246fa9.jpeg",
     "static/media/img8.jpeg": "/static/media/img8.6e9744e688aa1299ab75.jpeg",
     "static/media/img7.jpeg": "/static/media/img7.6a6d72c60a0b486dd36c.jpeg",
@@ -10,17 +10,16 @@
     "static/media/img2.jpeg": "/static/media/img2.4fd5eb8d46e1a829c770.jpeg",
     "static/media/img1.jpeg": "/static/media/img1.3c8d426ed5562327d280.jpeg",
     "static/media/jesus.jpg": "/static/media/jesus.803ceffa1c0c3a245de6.jpg",
-    "static/media/88blendz_copy.jpeg": "/static/media/88blendz_copy.d13891b7f46d223d0d30.jpeg",
     "static/media/list3.png": "/static/media/list3.591966bd501cd46e103d.png",
     "static/media/list1.png": "/static/media/list1.fc755743c4cba74eb1c5.png",
     "static/media/list2.png": "/static/media/list2.77815a9a204b054a0fca.png",
     "static/media/naroBlends.jpeg": "/static/media/naroBlends.47f5a20624be6d519a63.jpeg",
     "index.html": "/index.html",
     "main.ab5791db.css.map": "/static/css/main.ab5791db.css.map",
-    "main.f2c7d2cc.js.map": "/static/js/main.f2c7d2cc.js.map"
+    "main.9aba1c3c.js.map": "/static/js/main.9aba1c3c.js.map"
   },
   "entrypoints": [
     "static/css/main.ab5791db.css",
-    "static/js/main.f2c7d2cc.js"
+    "static/js/main.9aba1c3c.js"
   ]
 }
