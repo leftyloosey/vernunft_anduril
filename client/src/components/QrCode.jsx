@@ -1,15 +1,16 @@
-import { QRCode } from 'react-qrcode-logo'
-import image from '../assets/images/88blendz_copy.jpeg'
+// import { QRCode } from 'react-qrcode-logo'
+// import image from '../assets/images/88blendz_copy.jpeg'
 
-const QrCode = ({ listAddress }) => {
+const QrCode = ({ qrcode }) => {
   return (
     <>
-      <QRCode
+      <img src={qrcode} alt='' />
+      {/* <QRCode
         value={listAddress}
         logoImage={image}
         logoHeight={45}
         logoWidth={45}
-      />
+      /> */}
       ,
     </>
   )

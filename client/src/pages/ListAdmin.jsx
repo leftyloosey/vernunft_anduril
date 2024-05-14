@@ -2,6 +2,9 @@ import { useQuery } from '@apollo/client'
 import { GET_LISTS, LIST_1_ID, LIST_2_ID, LIST_3_ID } from '../queries'
 import AColumn from '../components/AColumn'
 import QrCode from '../components/QrCode'
+import list1 from '../assets/images/qrcodes/list1.png'
+import list2 from '../assets/images/qrcodes/list2.png'
+import list3 from '../assets/images/qrcodes/list3.png'
 
 const ListAdmin = () => {
   const { data, loading, error, refetch } = useQuery(GET_LISTS)
@@ -12,9 +15,9 @@ const ListAdmin = () => {
     <div className='flex flex-col ml-14 md:flex-row md:justify-around gap-24'>
       <div className='flex flex-col'>
         <QrCode
-          listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+          // listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+          qrcode={list1}
         />
-        {/* <QrCode listAddress={'http://localhost:3000/signuplist1'} /> */}
         <AColumn
           id={LIST_1_ID}
           data={data?.listList[0]?.names}
@@ -25,7 +28,8 @@ const ListAdmin = () => {
 
       <div className='flex flex-col'>
         <QrCode
-          listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+          // listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+          qrcode={list2}
         />
         {/* <QrCode listAddress={'http://localhost:3000/signuplist2'} /> */}
         <AColumn
@@ -37,9 +41,9 @@ const ListAdmin = () => {
       </div>
 
       <div className='flex flex-col'>
-        {/* <QrCode listAddress={'http://localhost:3000/signuplist3'} /> */}
         <QrCode
-          listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+          // listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
+          qrcode={list3}
         />
         <AColumn
           id={LIST_3_ID}
