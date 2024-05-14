@@ -25,7 +25,7 @@
     "react-qrcode-logo": "^2.10.0"
   },
   "devDependencies": {
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.5",
     "nodemon": "^3.0.2"
   }
 }
