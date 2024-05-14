@@ -54,12 +54,6 @@ const Home = () => {
       <div className={`${load}`} onLoad={onLoad}>
         <div className='flex justify-center space-x-6 text-slate-400 text-sm opacity-80 mt-2'>
           <div className='hover:text-slate-300'>
-            <Link to='/signuplist1'>SignUp</Link>
-          </div>
-          <div className='hover:text-slate-300'>
-            <Link to='/listadmin'>ListAdmin</Link>
-          </div>
-          <div className='hover:text-slate-300'>
             <Link to='/merch'>Merch</Link>
           </div>
         </div>
