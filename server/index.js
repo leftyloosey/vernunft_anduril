@@ -41,7 +41,7 @@ await server.start()
 // Set up our Express middleware to handle CORS, body parsing,
 // and our expressMiddleware function.
 app.use(express.static(path.join(__dirname, '../client/build')))
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
 })
 
