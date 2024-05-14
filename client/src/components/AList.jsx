@@ -48,7 +48,7 @@ const AList = ({ id, props }) => {
           </label>
           <input
             type='text'
-            className='form-control text-black text-5xl ml-2 font-semibold w-64 md:w-80'
+            className='form-control text-black text-5xl ml-2 font-semibold w-80 md:w-80'
             id='name'
             value={name}
             onChange={(e) => setName(e.target.value)}
