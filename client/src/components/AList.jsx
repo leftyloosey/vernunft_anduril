@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useMutation } from '@apollo/client'
+import { Audio } from 'react-loader-spinner'
 
-const AList = ({ id, props }) => {
+const AList = ({ id, props, loading2 }) => {
   const { data, PUSH_LIST, refetch } = props
   const [name, setName] = useState('')
 
@@ -27,7 +28,34 @@ const AList = ({ id, props }) => {
     e.preventDefault()
     confirmFunction()
   }
-  if (loading) return <p>Loading</p>
+  if (loading)
+    return (
+      <>
+        <Audio
+          height='80'
+          width='80'
+          radius='9'
+          color='green'
+          ariaLabel='three-dots-loading'
+          wrapperStyle
+          wrapperClass
+        />
+      </>
+    )
+  if (loading2)
+    return (
+      <>
+        <Audio
+          height='80'
+          width='80'
+          radius='9'
+          color='green'
+          ariaLabel='three-dots-loading'
+          wrapperStyle
+          wrapperClass
+        />
+      </>
+    )
   if (error) return <p>Something Went Wrong</p>
   return (
     <div className=''>

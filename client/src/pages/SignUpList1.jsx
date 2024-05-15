@@ -7,12 +7,12 @@ const SignUpList1 = () => {
     variables: { id: LIST_1_ID },
   })
 
-  if (loading) return <p>Loading</p>
+  // if (loading) return <p>Loading</p>
   if (error) return <p>Something Went Wrong</p>
 
-  const props = { PUSH_LIST, data, refetch }
+  const props = { PUSH_LIST, data, refetch, loading }
 
-  return <AList id={LIST_1_ID} props={props} />
+  return <AList id={LIST_1_ID} props={props} loading2={loading} />
 }
 
 export default SignUpList1

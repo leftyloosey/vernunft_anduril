@@ -12,7 +12,7 @@ const ListAdmin = () => {
   if (loading) return <p>Loading</p>
   if (error) return <p>Something Went Wrong</p>
   return (
-    <div className='flex flex-col ml-12 md:flex-row md:justify-around gap-24'>
+    <div className='flex flex-col md:flex-row md:justify-around gap-24'>
       <div className='flex flex-col'>
         <QrCode
           // listAddress={'https://blendz-a0e7082e8ee7.herokuapp.com/signuplist1'}
