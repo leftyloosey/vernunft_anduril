@@ -24,6 +24,7 @@
     "http": "^0.0.1-security",
     "mongoose": "^8.0.3",
     "path": "^0.12.7",
+    "react-google-maps": "^9.4.5",
     "react-qrcode-logo": "^2.10.0"
   },
   "devDependencies": {
