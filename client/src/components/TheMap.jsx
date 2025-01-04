@@ -1,4 +1,4 @@
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
+import { APIProvider, Map, AdvancedMarker } from '@vis.gl/react-google-maps'
 
 const HOBART = 'AIzaSyC0zTkwcKzG9r-sF6Xwtj3-WDgwSNDwdZ4'
 
@@ -14,7 +14,7 @@ const TheMap = () => (
       gestureHandling={'greedy'}
       disableDefaultUI={true}
     >
-      <Marker position={{ lat, lng }} />
+      <AdvancedMarker position={{ lat, lng }} />
     </Map>
   </APIProvider>
 )
