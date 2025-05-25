@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 import SignUpList1 from './pages/SignUpList1'
 import SignUpList2 from './pages/SignUpList2'
 import SignUpList3 from './pages/SignUpList3'
@@ -11,7 +11,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<ListAdmin />} />
-        {/* <Route index element={<Home />} /> */}
+        <Route index element={<ListAdmin />} />
 
         <Route path='/signuplist1' element={<SignUpList1 />} />
         <Route path='/signuplist2' element={<SignUpList2 />} />
