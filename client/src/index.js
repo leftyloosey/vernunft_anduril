@@ -12,7 +12,7 @@ const client = new ApolloClient({
   // uri: 'http://localhost:5002',
   cache: new InMemoryCache(),
 })
-
+// comment
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
