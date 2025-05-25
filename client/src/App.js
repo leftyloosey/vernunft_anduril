@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route index element={<Home />} />
+        <Route path='/' element={<ListAdmin />} />
+        {/* <Route index element={<Home />} /> */}
 
         <Route path='/signuplist1' element={<SignUpList1 />} />
         <Route path='/signuplist2' element={<SignUpList2 />} />
@@ -20,7 +20,7 @@ function App() {
 
         <Route path='/merch' element={<Merch />} />
 
-        <Route path='*' element={<Home />} />
+        <Route path='*' element={<ListAdmin />} />
       </Routes>
     </>
   )
