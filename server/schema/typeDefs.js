@@ -21,7 +21,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    create(name: String!, email: String!, phone: String!): Client
+    createClient(name: String!, email: String!, phone: String!): Client
     createList(listName: String): List
     getOneMutation(id: ID, names: [String]): List
     getOneBobby(id: ID, email: String): Client

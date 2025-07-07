@@ -8,8 +8,8 @@ import './index.css'
 import App from './App'
 
 const client = new ApolloClient({
-  uri: '/',
-  // uri: 'http://localhost:5002',
+  // uri: '/',
+  uri: 'http://localhost:5002',
   cache: new InMemoryCache(),
 })
 // comment

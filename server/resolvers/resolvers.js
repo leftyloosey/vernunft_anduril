@@ -16,7 +16,7 @@ const resolvers = {
   },
 
   Mutation: {
-    create: async (parent, args) => {
+    createClient: async (parent, args) => {
       const { name, email, phone } = args
       const newClient = new Client({
         name,

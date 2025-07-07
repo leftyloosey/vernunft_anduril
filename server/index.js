@@ -13,7 +13,6 @@ import { fileURLToPath } from 'url'
 
 import cors from 'cors'
 import http from 'http'
-import { log } from 'console'
 
 const port = process.env.PORT || 5002
 

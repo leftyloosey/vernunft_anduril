@@ -8,7 +8,7 @@ import list3 from '../assets/images/qrcodes/list3.png'
 
 const ListAdmin = () => {
   const { data, loading, error, refetch } = useQuery(GET_LISTS)
-
+  console.log(data)
   if (loading) return <p>Loading</p>
   if (error) return <p>Something Went Wrong</p>
   return (

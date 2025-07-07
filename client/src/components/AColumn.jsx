@@ -6,7 +6,6 @@ const AColumn = ({ id, data, listName, refetch }) => {
   const [name, setName] = useState('')
 
   const mutateVars = { id, listName: name }
-
   const [mutateListName, { loading, error }] = useMutation(CHANGE_LIST_NAME, {
     variables: mutateVars,
     onCompleted: () => refetch(),

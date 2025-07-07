@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import Client from './Client.js'
 
 const listSchema = new mongoose.Schema({
   listName: {
@@ -7,6 +8,9 @@ const listSchema = new mongoose.Schema({
   names: {
     type: [String],
   },
+  // clients: {
+  //   type: [Client],
+  // },
 })
 
 const List = mongoose.model('List', listSchema)
